@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Shultz - CWC Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h2 {
+            color: #e67e22;
+        }
+        /* New styles for the profile photo */
+        .profile-photo {
+            display: block;
+            margin: 20px auto;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid #e67e22;
+            object-fit: cover;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        li strong {
+            color: #2c3e50;
+            display: inline-block;
+            width: 80px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e67e22;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #d35400;
+        }
+        #email-container {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+    </style>
+    <script>
+        function showEmail() {
+            var emailContainer = document.getElementById('email-container');
+            var emailButton = document.getElementById('email-btn');
+            if (emailContainer.style.display === 'none' || emailContainer.style.display === '') {
+                emailContainer.style.display = 'block';
+                emailButton.textContent = 'Hide Email';
+            } else {
+                emailContainer.style.display = 'none';
+                emailButton.textContent = 'Show Email';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="image_0.png" alt="Profile Photo of Brian Shultz" class="profile-photo">
+        
+        <h1>Brian Shultz</h1>
+        <h2>Math Instructor</h2>
+        <ul>
+            <li><strong>Institution:</strong> Central Wyoming College</li>
+            <li><strong>Office:</strong> MH 168</li>
+            <li><strong>Phone:</strong> (307) 855-2180</li>
+        </ul>
+        <a href="#" class="btn" id="email-btn" onclick="showEmail(); return false;">Show Email</a>
+        <div id="email-container">
+            <strong>Email:</strong> bshultz@cwc.edu
+        </div>
+        <p style="margin-top: 30px;">
+            <a href="https://www.cwc.edu/" target="_blank" style="color: #e67e22; text-decoration: none;">Visit CWC Website</a>
+        </p>
+    </div>
+</body>
+</html>
