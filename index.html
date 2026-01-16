@@ -3,107 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brian Shultz - CWC Profile</title>
+    <title>Brian Shultz - Math Instructor</title>
     <style>
+        /* Global Styles */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-        .container {
-            max-width: 600px;
-            margin: 40px auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+        /* Profile Card Container */
+        .profile-card {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 600px; /* Limits width for a "half-page" feel */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Header Section with Image */
+        .card-header {
+            background-color: #2c3e50; /* Dark blue-gray */
+            color: #ffffff;
             text-align: center;
+            padding: 30px 20px;
         }
-        h1 {
-            color: #2c3e50;
-        }
-        h2 {
-            color: #e67e22;
-        }
-        /* New styles for the profile photo */
-        .profile-photo {
-            display: block;
-            margin: 20px auto;
-            width: 300px;
-            height: 300px;
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 5px solid #e67e22;
             object-fit: cover;
+            border: 4px solid #e67e22; /* Accent color (orange from the shirt) */
+            margin-bottom: 15px;
         }
-        ul {
-            list-style-type: none;
+
+        .card-header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .card-header h2 {
+            margin: 5px 0 0;
+            font-size: 1.2rem;
+            font-weight: normal;
+            color: #bdc3c7;
+        }
+
+        /* Content Section */
+        .card-content {
+            padding: 20px;
+        }
+
+        .contact-info {
+            list-style: none;
             padding: 0;
-            text-align: left;
-            display: inline-block;
-            margin-top: 20px;
+            margin: 0;
         }
-        li {
-            margin-bottom: 10px;
-            font-size: 1.1em;
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1rem;
         }
-        li strong {
+
+        .contact-info i {
+            margin-right: 15px;
             color: #2c3e50;
-            display: inline-block;
-            width: 80px;
+            font-weight: bold;
+            width: 60px; /* Fixed width for labels */
         }
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
+
+        /* Contact Button & Hidden Email */
+        .email-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .email-address {
+            display: none; /* Hidden by default */
+            margin-right: 10px;
+        }
+
+        #toggleEmailBtn {
             background-color: #e67e22;
             color: #fff;
-            text-decoration: none;
+            border: none;
+            padding: 8px 12px;
             border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
             transition: background-color 0.3s ease;
         }
-        .btn:hover {
+
+        #toggleEmailBtn:hover {
             background-color: #d35400;
         }
-        #email-container {
-            display: none;
-            margin-top: 20px;
-            font-size: 1.1em;
+
+        /* Footer */
+        .card-footer {
+            padding: 15px;
+            text-align: center;
+            background-color: #ecf0f1;
+            font-size: 0.9rem;
+            color: #7f8c8d;
         }
-    </style>
-    <script>
-        function showEmail() {
-            var emailContainer = document.getElementById('email-container');
-            var emailButton = document.getElementById('email-btn');
-            if (emailContainer.style.display === 'none' || emailContainer.style.display === '') {
-                emailContainer.style.display = 'block';
-                emailButton.textContent = 'Hide Email';
-            } else {
-                emailContainer.style.display = 'none';
-                emailButton.textContent = 'Show Email';
+
+        .card-footer a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 400px) {
+            .card-header {
+                padding: 20px 10px;
+            }
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            .contact-info i {
+                width: 50px;
             }
         }
-    </script>
+    </style>
 </head>
 <body>
-    <div class="container">
-        <img src="image_0.png" alt="Profile Photo of Brian Shultz" class="profile-photo">
-        
+
+<main class="profile-card">
+    <header class="card-header">
+        <img src="image_0.png" alt="Brian Shultz" class="profile-image">
         <h1>Brian Shultz</h1>
         <h2>Math Instructor</h2>
-        <ul>
-            <li><strong>Institution:</strong> Central Wyoming College</li>
-            <li><strong>Office:</strong> MH 168</li>
-            <li><strong>Phone:</strong> (307) 855-2180</li>
+    </header>
+
+    <section class="card-content">
+        <ul class="contact-info">
+            <li>
+                <i>Institution:</i>
+                <span>Central Wyoming College</span>
+            </li>
+            <li>
+                <i>Office:</i>
+                <span>MH 168</span>
+            </li>
+            <li>
+                <i>Phone:</i>
+                <span>(307) 855-2180</span>
+            </li>
+            <li>
+                <i>Email:</i>
+                <div class="email-container">
+                    <span class="email-address" id="emailText">bshultz@cwc.edu</span>
+                    <button id="toggleEmailBtn">Show Email</button>
+                </div>
+            </li>
         </ul>
-        <a href="#" class="btn" id="email-btn" onclick="showEmail(); return false;">Show Email</a>
-        <div id="email-container">
-            <strong>Email:</strong> bshultz@cwc.edu
-        </div>
-        <p style="margin-top: 30px;">
-            <a href="https://www.cwc.edu/" target="_blank" style="color: #e67e22; text-decoration: none;">Visit CWC Website</a>
-        </p>
-    </div>
+    </section>
+
+    <footer class="card-footer">
+        <p>Visit <a href="https://www.cwc.edu/" target="_blank" rel="noopener noreferrer">cwc.edu</a> for more information.</p>
+    </footer>
+</main>
+
+<script>
+    // JavaScript to toggle email visibility
+    document.addEventListener('DOMContentLoaded', function() {
+        const emailText = document.getElementById('emailText');
+        const toggleBtn = document.getElementById('toggleEmailBtn');
+
+        toggleBtn.addEventListener('click', function() {
+            if (emailText.style.display === 'block') {
+                emailText.style.display = 'none';
+                toggleBtn.textContent = 'Show Email';
+            } else {
+                emailText.style.display = 'block';
+                toggleBtn.textContent = 'Hide Email';
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
