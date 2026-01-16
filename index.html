@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Shultz - Math Instructor</title>
+    <style>
+        /* CWC Brand Colors: Orange and Black */
+        :root {
+            --cwc-orange: #d35400; /* Rust/Orange approximation */
+            --cwc-black: #2c3e50;  /* Dark Slate/Black */
+            --light-gray: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-gray);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .profile-card {
+            background-color: var(--white);
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Section */
+        header {
+            background-color: var(--cwc-black);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--cwc-orange);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+
+        header h2 {
+            margin: 5px 0 0;
+            font-weight: 400;
+            font-size: 1.2em;
+            color: #ddd;
+        }
+
+        /* Main Content Layout */
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .profile-image-section {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 10px;
+            border-right: 1px solid #eee;
+        }
+
+        .profile-image-section img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--cwc-orange);
+            margin-bottom: 15px;
+        }
+
+        .info-section {
+            flex: 2;
+            min-width: 300px;
+            padding: 10px 20px;
+        }
+
+        h3 {
+            color: var(--cwc-orange);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+
+        ul.contact-list, ul.course-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.contact-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        ul.contact-list li strong {
+            width: 80px;
+            color: var(--cwc-black);
+        }
+
+        /* Course Tags */
+        .course-tag {
+            display: inline-block;
+            background-color: var(--cwc-black);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin: 5px 5px 5px 0;
+        }
+
+        /* Interactive Button */
+        .btn-contact {
+            background-color: var(--cwc-orange);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-contact:hover {
+            background-color: #a04000;
+        }
+
+        .hidden-email {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #eef;
+            border-radius: 4px;
+            color: var(--cwc-black);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #eee;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        footer a {
+            color: var(--cwc-orange);
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            .profile-image-section {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <header>
+            <h1>Brian Shultz</h1>
+            <h2>Math Instructor</h2>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="profile-image-section">
+                <img src="https://ui-avatars.com/api/?name=Brian+Shultz&background=d35400&color=fff&size=200" alt="Brian Shultz">
+                <p><strong>Central Wyoming College</strong><br>Riverton, Wyoming</p>
+            </div>
+
+            <div class="info-section">
+                <h3>Contact Information</h3>
+                <ul class="contact-list">
+                    <li><strong>Office:</strong> MH 168</li>
+                    <li><strong>Phone:</strong> (307) 855-2180</li>
+                    <li><strong>Email:</strong> <button class="btn-contact" onclick="revealEmail()">Show Email</button></li>
+                </ul>
+                <div id="email-display" class="hidden-email">bshultz@cwc.edu</div>
+
+                <h3>Teaching Focus</h3>
+                <p>Dedicated instructor specializing in college-level mathematics. Frequently taught courses include:</p>
+                <div class="courses">
+                    <span class="course-tag">MATH 0920</span>
+                    <span class="course-tag">MATH 1000 (Problem Solving)</span>
+                    <span class="course-tag">MATH 1400 (College Algebra)</span>
+                    <span class="course-tag">MATH 2355</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Brian Shultz | <a href="https://www.cwc.edu/" target="_blank">Central Wyoming College</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function revealEmail() {
+            var emailDiv = document.getElementById('email-display');
+            var btn = document.querySelector('.btn-contact');
+            
+            if (emailDiv.style.display === "block") {
+                emailDiv.style.display = "none";
+                btn.textContent = "Show Email";
+            } else {
+                emailDiv.style.display = "block";
+                btn.textContent = "Hide Email";
+            }
+        }
+    </script>
+
+</body>
+</html>
